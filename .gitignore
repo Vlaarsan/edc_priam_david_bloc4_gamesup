@@ -1,0 +1,25 @@
+# Java / Maven
+backend/target/
+backend/*.class
+backend/.classpath
+*.log
+
+# Python
+ml-api/__pycache__/
+ml-api/*.pyc
+venv/
+.env
+
+# Docker
+**/target/
+**/node_modules/
+*.swp
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+Thumbs.db
+.DS_Store
