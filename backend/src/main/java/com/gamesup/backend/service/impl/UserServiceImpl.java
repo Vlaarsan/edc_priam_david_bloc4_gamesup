@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
                 .username(request.getUsername())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(request.getRole() != null ? request.getRole() : User.Role.ROLE_CLIENT)
+                .role(request.getRole() != null ? toEntityRole(request.getRole()) : User.Role.ROLE_CLIENT)
                 .build();
 
         User saved = userRepository.save(user);
@@ -64,6 +64,13 @@ public class UserServiceImpl implements UserService {
         }
         userRepository.deleteById(id);
         return true;
+    }
+
+    private User.Role toEntityRole(UserRequestDTO.UserRole dtoRole) {
+        return switch (dtoRole) {
+            case ROLE_ADMIN -> User.Role.ROLE_ADMIN;
+            case ROLE_CLIENT, default -> User.Role.ROLE_CLIENT;
+        };
     }
 
     private UserDTO toDto(User user) {
