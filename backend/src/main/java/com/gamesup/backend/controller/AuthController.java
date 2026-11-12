@@ -1,7 +1,8 @@
-﻿package com.gamesup.backend.controller;
+package com.gamesup.backend.controller;
 
-import com.gamesup.backend.dto.AuthRequestDTO;\nimport com.gamesup.backend.dto.UserDTO;
+import com.gamesup.backend.dto.AuthRequestDTO;
 import com.gamesup.backend.dto.AuthResponseDTO;
+import com.gamesup.backend.dto.UserDTO;
 import com.gamesup.backend.security.JwtService;
 import com.gamesup.backend.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -45,4 +46,3 @@ public class AuthController {
         return ResponseEntity.ok(user);
     }
 }
-

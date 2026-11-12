@@ -1,4 +1,6 @@
-﻿package com.gamesup.backend.entity;\n\nimport java.util.Set;
+package com.gamesup.backend.entity;
+
+import java.util.Set;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -48,4 +50,3 @@ public class Game {
     @OneToMany(mappedBy = "game", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<PurchaseLine> purchaseLines;
 }
-
